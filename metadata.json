@@ -1,0 +1,7 @@
+{
+  "name": "RIFZ - Urban Streetwear Premium",
+  "description": "Landing page profesional untuk brand RIFZ yang menjual pakaian, jaket, dan hoodie eksklusif dengan kolaborasi artis dan anime.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
