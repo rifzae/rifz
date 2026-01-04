@@ -32,7 +32,7 @@ export const PRODUCTS: Product[] = [
     name: 'RIFZ x JUJUTSU KAISEN: Gojo Satoru Edition',
     category: 'Collaboration',
     price: 899000,
-    image: 'https://picsum.photos/seed/rifz4/600/800',
+    image: '/images/rifzjujutsu.png',
     description: 'Limited edition collaboration with Jujutsu Kaisen.'
   },
 ];
