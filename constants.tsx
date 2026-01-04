@@ -69,7 +69,7 @@ export const COLLABORATIONS: Collaboration[] = [
     id: 'c1',
     partner: 'Jujutsu Kaisen',
     type: 'Anime',
-    image: 'https://picsum.photos/seed/anime1/800/600',
+    image: 'rifzjujutsu.png',
     description: 'Koleksi eksklusif yang menggabungkan elemen supernatural dengan estetika techwear.'
   },
   {
