@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Product } from '../types';
 
 interface ProductModalProps {
@@ -8,6 +7,27 @@ interface ProductModalProps {
 }
 
 const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
+  const [isAdding, setIsAdding] = useState(false);
+
+  // Fungsi: Tambah ke Keranjang dengan simulasi Loading
+  const handleAddToCart = () => {
+    setIsAdding(true);
+    
+    // Simulasi delay server (1 detik)
+    setTimeout(() => {
+      setIsAdding(false);
+      alert(`Berhasil: ${product.name} telah ditambahkan ke keranjang Anda!`);
+      onClose(); // Menutup modal otomatis setelah sukses
+    }, 1000);
+  };
+
+  // Fungsi: Cek Stok Acak
+  const handleCheckStock = () => {
+    // Menghasilkan angka acak antara 1 - 50
+    const stock = Math.floor(Math.random() * 50) + 1;
+    alert(`Stok tersedia di gudang pusat: ${stock} unit.`);
+  };
+
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
       <div className="absolute inset-0 bg-black/90 backdrop-blur-xl" onClick={onClose}></div>
@@ -38,10 +58,30 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
           </div>
 
           <div className="space-y-4">
-            <button className="w-full bg-white text-black font-black uppercase tracking-widest py-5 hover:bg-red-600 hover:text-white transition-all">
-              Tambah ke Keranjang
+            {/* Tombol Tambah ke Keranjang dengan Loading State */}
+            <button 
+              onClick={handleAddToCart}
+              disabled={isAdding}
+              className="w-full bg-white text-black font-black uppercase tracking-widest py-5 hover:bg-red-600 hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2"
+            >
+              {isAdding ? (
+                <>
+                  <svg className="animate-spin h-5 w-5 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Processing...
+                </>
+              ) : (
+                "Tambah ke Keranjang"
+              )}
             </button>
-            <button className="w-full border border-white/10 text-white font-black uppercase tracking-widest py-5 hover:bg-white hover:text-black transition-all">
+            
+            {/* Tombol Cek Stok */}
+            <button 
+              onClick={handleCheckStock}
+              className="w-full border border-white/10 text-white font-black uppercase tracking-widest py-5 hover:bg-white hover:text-black transition-all"
+            >
               Cek Stok di Toko
             </button>
           </div>
