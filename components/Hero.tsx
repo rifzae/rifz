@@ -1,7 +1,16 @@
-
 import React from 'react';
 
 const Hero: React.FC = () => {
+  
+  // Fungsi untuk menangani scroll halus
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault(); // Mencegah lompatan kasar (default anchor behavior)
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background Placeholder / Image Overlay */}
@@ -15,18 +24,32 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 text-center px-4 max-w-4xl">
-        <h3 className="text-red-600 font-bold uppercase tracking-[0.5em] mb-4 animate-bounce">New Collection Available</h3>
-        <h1 className="text-6xl md:text-9xl font-black tracking-tighter mb-6 leading-none">
-          DEFY THE <br/><span className="text-gradient">ORDINARY</span>
+        <h3 className="text-red-600 font-bold uppercase tracking-[0.5em] mb-4 animate-bounce">
+            New Collection Available
+        </h3>
+        <h1 className="text-6xl md:text-9xl font-black tracking-tighter mb-6 leading-none text-white">
+          DEFY THE <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">ORDINARY</span>
         </h1>
         <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-medium">
           Mendefinisikan ulang batas antara fashion urban dan kenyamanan premium. Temukan identitasmu bersama RIFZ.
         </p>
+        
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#products" className="px-10 py-4 bg-white text-black font-black uppercase tracking-widest rounded-sm hover:bg-red-600 hover:text-white transition-all duration-300 transform hover:scale-105">
+          {/* Tombol Explore Collection (Scroll ke Produk) */}
+          <a 
+            href="#products" 
+            onClick={(e) => handleScroll(e, 'products')}
+            className="px-10 py-4 bg-white text-black font-black uppercase tracking-widest rounded-sm hover:bg-red-600 hover:text-white transition-all duration-300 transform hover:scale-105 inline-block cursor-pointer"
+          >
             Explore Collection
           </a>
-          <a href="#collab" className="px-10 py-4 border-2 border-white/20 text-white font-black uppercase tracking-widest rounded-sm hover:bg-white hover:text-black transition-all duration-300">
+
+          {/* Tombol Collab Series (Scroll ke Kolaborasi) */}
+          <a 
+            href="#collab" 
+            onClick={(e) => handleScroll(e, 'collab')}
+            className="px-10 py-4 border-2 border-white/20 text-white font-black uppercase tracking-widest rounded-sm hover:bg-white hover:text-black transition-all duration-300 inline-block cursor-pointer"
+          >
             Collab Series
           </a>
         </div>
