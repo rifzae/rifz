@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 interface NavbarProps {
@@ -15,6 +14,13 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     { id: 'collab', label: 'Kolaborasi' },
     { id: 'contact', label: 'Kontak' },
   ];
+
+  const handleShopNowClick = () => {
+    const productSection = document.getElementById('products');
+    if (productSection) {
+      productSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
@@ -41,7 +47,11 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-             <button className="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-zinc-200 transition-colors">
+             {/* Tombol Shop Now yang sudah dimodifikasi */}
+             <button 
+               onClick={handleShopNowClick}
+               className="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-zinc-200 transition-colors"
+             >
                Shop Now
              </button>
           </div>
