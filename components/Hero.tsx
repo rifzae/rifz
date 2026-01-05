@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
       {/* Video Background Placeholder / Image Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://picsum.photos/seed/hero/1920/1080" 
+          src="/images/hero.png" 
           alt="Streetwear Hero" 
           className="w-full h-full object-cover opacity-40"
         />
