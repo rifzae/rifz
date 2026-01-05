@@ -30,7 +30,7 @@ const About: React.FC = () => {
         <div className="relative">
           <div className="absolute -inset-4 border border-red-600/30 rounded-lg"></div>
           <img 
-            src="https://picsum.photos/seed/about/800/1000" 
+            src="/images/thestory.png" 
             alt="About RIFZ" 
             className="rounded-lg relative z-10 w-full object-cover shadow-2xl"
           />
