@@ -11,10 +11,10 @@ const About: React.FC = () => {
             LAHIR DARI JALANAN, <br/>UNTUK MASA DEPAN.
           </h3>
           <p className="text-zinc-400 text-lg leading-relaxed mb-6">
-            RIFZ bukan sekadar merek pakaian; ini adalah pernyataan gerakan budaya. Dimulai dari sketsa di sudut Jakarta, kami tumbuh dengan misi untuk menciptakan pakaian yang tahan banting secara kualitas namun tetap progresif secara gaya.
+            RIFZ bukan sekadar merek pakaian; ini adalah pernyataan gerakan budaya. Dimulai dari sketsa di sudut Pedesaan, kami tumbuh dengan misi untuk menciptakan pakaian yang tahan banting secara kualitas namun tetap progresif secara gaya.
           </p>
           <p className="text-zinc-400 text-lg leading-relaxed mb-10">
-            Kami percaya bahwa pakaian adalah perisai sekaligus cermin diri. Itulah mengapa setiap benang, potongan, dan sablonan pada hoodie dan jaket kami diproses melalui kurasi ketat.
+            Kami percaya bahwa pakaian adalah perisai sekaligus cermin diri. Itulah mengapa setiap benang, potongan, dan sablonan pada pakaian kami diproses melalui kurasi ketat.
           </p>
           <div className="grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
             <div>
